@@ -5,7 +5,8 @@ const itemServicios = document.getElementById("itemServicios");
 const itemNosotros = document.getElementById("itemNosotros");
 const itemContact = document.getElementById("itemContacto");
 const itemsMenu = document.querySelectorAll(".nav-link");
-
+// ------------------ Formulario --------------------
+const form = document.getElementById("formulario");
 
 addEventListener("scroll",()=>{
     
