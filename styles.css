@@ -622,19 +622,20 @@ footer p{
 /*----------------------------Pagina de Contacto-------------------------*/
 
     .section-contact{
-        height:1120px;
+        height:1200px;
+        /* padding:10px 0; */
     }
 
     .section-contact>.container-fluid>.row{
-        height:560px;
+        height:600px;
     }
 
     .section-contact>.container-fluid>.row>.col{
-        height:560px;
+        height:600px;
     }
 
     .section-contact>.container-fluid>.row>.col>.row>.col{
-        height:560px;
+        height:600px;
     }
 
 
@@ -647,7 +648,8 @@ footer p{
         height:100px;
     }
     form{
-        height:400px;
+        height:auto;
+        /* padding:30px 0; */
     }
 }
 
@@ -747,19 +749,19 @@ footer p{
     /*----------------------------Pagina de Contacto-------------------------*/
 
     .section-contact{
-        height:1120px;
+        height:1200px;
     }
 
     .section-contact>.container-fluid>.row{
-        height:560px;
+        height:600px;
     }
 
     .section-contact>.container-fluid>.row>.col{
-        height:560px;
+        height:600px;
     }
 
     .section-contact>.container-fluid>.row>.col>.row>.col{
-        height:560px;
+        height:600px;
     }
 
 
@@ -772,7 +774,7 @@ footer p{
         height:100px;
     }
     form{
-        height:400px;
+        height:auto;
     }
 }
 
