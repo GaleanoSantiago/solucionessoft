@@ -94,7 +94,11 @@ a{
   margin-right: auto;
   margin-left: auto;
 }
-
+.centrar-flex{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 .contenedor-fluido {
     margin-right: auto;
     margin-left: auto;
@@ -456,9 +460,9 @@ nav.fixed {
 .section-map .box-1 h1{
     font-weight:bold;
 }
-iframe{
+/* iframe{
 	height:450px;
-}
+} */
 
 
 /*--------------------------- Pagina de Contacto -----------------------------*/
@@ -768,9 +772,9 @@ footer p{
         height:450px;
     }
 
-    iframe{
+    /* iframe{
         height:350px;
-    }
+    } */
 
 /*----------------------------Pagina de Contacto-------------------------*/
 
@@ -923,9 +927,9 @@ footer p{
         height:450px;
     }
 
-    iframe{
+    /* iframe{
         height:350px;
-    }
+    } */
 
     /*----------------------------Pagina de Contacto-------------------------*/
 
@@ -980,9 +984,9 @@ footer p{
 
 /*----------------------------Seccion de Nosotros-------------------------*/
   
-    iframe{
+    /* iframe{
         width:100% !important;
-    }
+    } */
 /*----------------------------Seccion a Contacto-------------------------*/
 
     .formulario_contacto{

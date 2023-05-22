@@ -13,6 +13,8 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <!--Animaciones-->
    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <!-- Api de google maps -->
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlwlb6i65u_WqWJx5oBx6Iwk7OuGOpEAA"></script>
     <!-- Estilos Propios -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -183,10 +185,12 @@
             </div>
             <div   class="box-2" 
             style="background-image: linear-gradient(rgba(5,7,8, 0.75), rgba(5,7,8, 0.75)), url('img/fondo4.jpg'); background-attachment: fixed; background-position: right;">
-                <div class="contenedor" data-aos="zoom-in-up" data-aos-duration="800" data-aos-once="true">
+                <div class="contenedor centrar-flex" data-aos="zoom-in-up" data-aos-duration="800" data-aos-once="true">
                     <!--<a class="btn btn-danger  fs-3" href="contacto.html">Pongase en Contacto con Nosotros</a>-->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5483385644175!2d-58.18675368531443!3d-26.178835169299525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa8cbd85f4311b54f!2zMjbCsDEwJzQzLjgiUyA1OMKwMTEnMDQuNCJX!5e0!3m2!1ses-419!2sar!4v1650051795540!5m2!1ses-419!2sar" width="95%" height="" style="border:0;" 
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5483385644175!2d-58.18675368531443!3d-26.178835169299525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa8cbd85f4311b54f!2zMjbCsDEwJzQzLjgiUyA1OMKwMTEnMDQuNCJX!5e0!3m2!1ses-419!2sar!4v1650051795540!5m2!1ses-419!2sar" width="95%" height="" style="border:0;" 
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                    <div id="map" style="height:400px; width:95%;" class=""></div>
+
                 </div>
             </div>
         </div>
@@ -206,6 +210,10 @@
                         <div class="col-12 text-azul">
                             <h1 class="fw-bold">Redes Sociales</h1>
                             <p class="text-secondary ">Tambien puede contactarnos por nuestras redes sociales oficiales.</p>
+                        </div>
+                        <div class="col-12 text-center">
+                            <iframe src="https://platform.twitter.com/embed/Tweet.html?dnt=false&embedId=twitter-widget-0&frame=false&hideCard=false&hideThread=false&id=125669498031312897&lang=es&origin=https%3A%2F%2Fexample.com%2Fpage.html&siteScreenName=0osman&theme=dark&widgetsVersion=82e1070%3A1619632193066" 
+                            width="85%" height="230" frameborder="0" scrolling="no"></iframe>
                         </div>
                     </div>
                 <div class="row justify-content-center">
@@ -288,8 +296,33 @@
 
     </div>
 </footer>
-
-
+<!-- <section> -->
+    <!-- <div id="map"></div> -->
+<!-- </section> -->
+<script>
+    function initMap() {
+      // Creamos un objeto geocoder para obtener las coordenadas de la dirección
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode({ 'address': '-26.178939, -58.184488' }, function(results, status) {
+        if (status === 'OK') {
+          // Creamos un objeto mapa centrado en las coordenadas obtenidas
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: results[0].geometry.location
+          });
+          // Agregamos un marcador en las coordenadas obtenidas
+          var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+          });
+        } else {
+          alert('No se pudo obtener la dirección: ' + status);
+        }
+      });
+    }
+    // Llamamos a la función initMap cuando se cargue la página
+    window.onload = initMap;
+  </script>
 <!--Jquery bootstrap y popper-->
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
