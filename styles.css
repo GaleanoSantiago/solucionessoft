@@ -1,4 +1,3 @@
-                            /*--- Estilos creados por Galeano Santiago ---*/
 /*---------------------------- Aspectos Generales ----------------------------*/
 
 *{
@@ -39,20 +38,24 @@
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
+
+    --purple: #a64abf;
 }
 
 
 body{
     font-family: sans-serif;
-    color: #fff;
+    color: #ffff;
     /* background-color:#000; */
     /*padding-bottom:1000em;*/
 	overflow-x:hidden;  /*Para ocultar el desplazamiento horizontal*/
 
 }
-
+.text-purple{
+    color:#6D59C0;
+}
 .bg-dark-blue{
-    background:#000080;
+    background:#6D59C0;
 }
 
 a{
@@ -94,7 +97,11 @@ a{
   margin-right: auto;
   margin-left: auto;
 }
-
+.centrar-flex{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 .contenedor-fluido {
     margin-right: auto;
     margin-left: auto;
@@ -116,14 +123,14 @@ a{
     left:0;
     justify-self: flex-start !important; */
     width:100%;
-    border-bottom:1px solid #fff;
+    border-bottom:1px solid #DDDAE8;
     box-shadow: 0 7px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
 	transition: all .5s;
 }
 
 #menu li > a{
     font-size:20px;
-    color: #ffff;
+    color: #fff;
     margin-right:50px;
 	transition: all .4s;
 
@@ -136,7 +143,7 @@ a{
 	transform: translateY(0) scale(1.10);
 	box-shadow:0 0 10px -10px;
 	transition: all .4s;
-    color: rgb(17, 0, 255);
+    color: rgb(109, 89, 192);
 }
 
 nav.fixed#menu {
@@ -151,7 +158,7 @@ nav.fixed {
     top: 0;
     width:100%;
     z-index: 3; /*Quitar mas tarde si hace falta*/
-    background:#000080;
+    background:#433E5A;
     border:none;
 
 }
@@ -163,7 +170,7 @@ nav.fixed {
   }
 
 .active-item{           /*Para utilizar en js*/
-    color:var(--bs-primary) !important;
+    color:#6D59C0 !important;
     transform: translateX(5px) scale(1) !important;
 }
 
@@ -175,7 +182,7 @@ nav.fixed {
 .banner{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(5,7,8, 0.75), rgba(5,7,8, 0.75)), url("img/fondo1.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(38,35,53, 0.70)), url("img/fondo1.jpg");
     /*Parallax*/
     background-attachment: fixed;
     background-size: 100%;
@@ -199,11 +206,11 @@ nav.fixed {
 }
 
 .banner-description a{
-    border: 2px solid rgba(255,255,255,1);
+    border: 2px solid rgba(221, 218, 232, 1);
     padding: 0.6em 3.5em;
     margin:auto;
     opacity:0.8;
-    color:#fff;
+    color:#DDDAE8;
     text-decoration:none;
     border-radius: 50px;
     font-size: 0.9em;
@@ -211,9 +218,9 @@ nav.fixed {
 }
 
 .banner-description a:hover{
-    border: 2px solid rgb(17, 0, 255);
+    border: 2px solid rgb(67,62, 90);
     background: rgb(196, 196, 201);
-    color: #000 !important;
+    color: #262335 !important;
     transform: translateY(0) scale(1.10);
     transition: all .25s;
 }
@@ -291,7 +298,7 @@ nav.fixed {
     width: 295px;   /*Ancho, para cambiarlo debes cambiar el max-width tambien*/
     /*max-width:295px;    /*Ancho maximo, esto es para que no se haga mas grande de 350px*/
     border-radius:10px;
-    background:white;
+    background:#F9F1FF;
     height:320px;   /*Alto de la tarjeta, para cambiarlo tenes que cambiar el max-height tambien*/
     /*max-height:300px; /*Para que no se haga mas grande al hacer responsive. Si queres que sea mas largo tenes que cambiar esta propiedad tambien, junto con el height*/
     transition: .3s;
@@ -372,7 +379,7 @@ nav.fixed {
 .bannerNosotros{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(5,7,8, 0.75), rgba(5,7,8, 0.75)), url("img/fondo3.jpg");
+    background: linear-gradient(rgba(38, 35, 53, 0.75), rgba(38, 35, 53, 0.75)), url("img/fondo3.jpg");
     /*Parallax*/
     background-attachment: fixed;
     background-position:center;
@@ -456,9 +463,9 @@ nav.fixed {
 .section-map .box-1 h1{
     font-weight:bold;
 }
-iframe{
+/* iframe{
 	height:450px;
-}
+} */
 
 
 /*--------------------------- Pagina de Contacto -----------------------------*/
@@ -482,7 +489,7 @@ iframe{
 .bannerContacto{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(5,7,8, 0.75), rgba(5,7,8, 0.75)), url("img/fondo5.jpg");
+    background: linear-gradient(rgba(38, 35, 53, 0.75), rgba(38, 35, 53, 0.75)), url("img/fondo5.jpg");
     /*Parallax*/
     background-attachment: fixed;
     background-position:center;
@@ -490,16 +497,16 @@ iframe{
 }
 
 input.transparent-input{
-	background-color:rgba(0,0,0,0) !important;
+	background-color:rgba(38, 35, 53, 0) !important;
 	border:none !important;
-	border-bottom:1px solid #fff !important;
-	border-left:1px solid #fff	!important;
-	color:#fff !important;
+	border-bottom:1px solid #DDDAE8 !important;
+	border-left:1px solid #DDDAE8	!important;
+	color: #DDDAE8 !important;
 
  }
 
 .formulario_contacto{
-    box-shadow: 10px 15px 20px -10px #000;
+    box-shadow: 10px 15px 20px -10px #262335;
     width:70%;
 }
 
@@ -525,7 +532,7 @@ footer{
     
     left:0px;
     bottom:0px;
-    background: #1b2a4e;
+    background: #262335;
     min-height:200px;
     background-position:center;
     width:100%;
@@ -535,7 +542,7 @@ footer{
 }
 
 footer p{
-    color:#f3f3f3;
+    color:#DDDAE8;
     text-align:center;
     padding:0 20px; 
     padding-top:20px;
@@ -544,7 +551,7 @@ footer p{
 #iconos{
     font-size:26px;
     padding: 0 8px;
-    color:#f3f3f3;
+    color:#DDDAE8;
 }
 
 
@@ -558,6 +565,12 @@ footer p{
 /* Escritorio grande */
 @media only screen and (min-width: 992px) and (max-width: 1199px){
 
+/*----------------------------Pagina de Servicios-------------------------*/
+
+    .banner-description h1{
+        font-size: 7em;
+
+    }
 
 /*----------------------------Pagina de Servicios-------------------------*/
 
@@ -608,9 +621,7 @@ footer p{
         background-repeat: repeat;
     }
     .banner-description h1{
-        font-weight: 600;
-        font-size: 7em;
-    
+        font-size: 5em;    
     }
 /*----------------------------Pagina de Servicios-------------------------*/
     .contenido_inicio-descripcion>.box-1{
@@ -678,7 +689,7 @@ footer p{
 
     .banner-description h1{
         font-weight: 600;
-        font-size: 5.5em;
+        font-size: 4em;
     }
 
     
@@ -768,9 +779,9 @@ footer p{
         height:450px;
     }
 
-    iframe{
+    /* iframe{
         height:350px;
-    }
+    } */
 
 /*----------------------------Pagina de Contacto-------------------------*/
 
@@ -819,7 +830,6 @@ footer p{
     }
 
     .banner-description h1{
-        font-weight: 600;
         font-size: 4em;
     }
 
@@ -923,9 +933,9 @@ footer p{
         height:450px;
     }
 
-    iframe{
+    /* iframe{
         height:350px;
-    }
+    } */
 
     /*----------------------------Pagina de Contacto-------------------------*/
 
@@ -973,16 +983,15 @@ footer p{
     }
 
     .banner-description h1{
-        font-weight: 600;
-        font-size: 3.5em;
+        font-size: 3em;
     }
 
 
 /*----------------------------Seccion de Nosotros-------------------------*/
   
-    iframe{
+    /* iframe{
         width:100% !important;
-    }
+    } */
 /*----------------------------Seccion a Contacto-------------------------*/
 
     .formulario_contacto{
@@ -1008,12 +1017,13 @@ footer p{
         font-size:13px;
     }
 
-/*----------------------------General-------------------------*/
+/*----------------------------inicio-------------------------*/
     .banner-description a{
-        
-        padding: 0.6em 1em;
-        
+        padding: 0.6em 1em;       
         font-size: 13px;
+    }
+    .banner-description h1{
+        font-size: 2.5em;
     }
 }
 
@@ -1031,10 +1041,6 @@ footer p{
         margin-top:25vh;
     }
 
-    .banner-description h1{
-        font-weight: 600;
-        font-size: 2.5em;
-    }
     .banner-description h3{
         font-size: 20px;
     }
