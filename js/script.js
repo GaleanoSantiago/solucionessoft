@@ -18,7 +18,7 @@ const validarForm = (event)=>{
 
     let hayErrores = false;
 
-    //Iteras sobre los inputs y puedes hacer las validaciones necesarias
+    //Iteras sobre los inputs y hacer las validaciones
     inputs.forEach(input => {
         // span para mostrar error debajo de los inputs
         const spanError = input.nextElementSibling;
