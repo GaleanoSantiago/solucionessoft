@@ -44,7 +44,7 @@
 
 body{
     font-family: sans-serif;
-    color: #fff;
+    color: #DDDAE8;
     /* background-color:#000; */
     /*padding-bottom:1000em;*/
 	overflow-x:hidden;  /*Para ocultar el desplazamiento horizontal*/
@@ -52,7 +52,7 @@ body{
 }
 
 .bg-dark-blue{
-    background:#000080;
+    background:#6D59C0;
 }
 
 a{
@@ -90,14 +90,14 @@ a{
     left:0;
     justify-self: flex-start !important; */
     width:100%;
-    border-bottom:1px solid #fff;
+    border-bottom:1px solid #DDDAE8;
     box-shadow: 0 7px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
 	transition: all .5s;
 }
 
 #menu li > a{
     font-size:20px;
-    color: #ffff;
+    color: #DDDAE8;
     margin-right:50px;
 	transition: all .4s;
 
@@ -110,7 +110,7 @@ a{
 	transform: translateY(0) scale(1.10);
 	box-shadow:0 0 10px -10px;
 	transition: all .4s;
-    color: rgb(17, 0, 255);
+    color: rgb(109, 89, 192);
 }
 
 nav.fixed#menu {
@@ -125,7 +125,7 @@ nav.fixed {
     top: 0;
     width:100%;
     z-index: 3; /*Quitar mas tarde si hace falta*/
-    background:#000080;
+    background:#433E5A;
     border:none;
 
 }
@@ -149,7 +149,7 @@ nav.fixed {
 .banner{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(5,7,8, 0.75), rgba(5,7,8, 0.75)), url("img/fondo1.jpg");
+    background: linear-gradient(rgba(67, 62, 90,0.897), rgba(38,35,53, 0.75)), url("img/fondo1.jpg");
     /*Parallax*/
     background-attachment: fixed;
     background-size: 100%;
@@ -170,11 +170,11 @@ nav.fixed {
 }
 
 .banner-description a{
-    border: 2px solid rgba(255,255,255,1);
+    border: 2px solid rgba(221, 218, 232, 1);
     padding: 0.6em 3.5em;
     margin:auto;
     opacity:0.8;
-    color:#fff;
+    color:#DDDAE8;
     text-decoration:none;
     border-radius: 50px;
     font-size: 0.9em;
@@ -182,9 +182,9 @@ nav.fixed {
 }
 
 .banner-description a:hover{
-    border: 2px solid rgb(17, 0, 255);
+    border: 2px solid rgb(67,62, 90);
     background: rgb(196, 196, 201);
-    color: #000 !important;
+    color: #262335 !important;
     transform: translateY(0) scale(1.10);
     transition: all .25s;
 }
@@ -249,7 +249,7 @@ nav.fixed {
     width: 295px;   /*Ancho, para cambiarlo debes cambiar el max-width tambien*/
     /*max-width:295px;    /*Ancho maximo, esto es para que no se haga mas grande de 350px*/
     border-radius:10px;
-    background:white;
+    background:#F9F1FF;
     height:300px;   /*Alto de la tarjeta, para cambiarlo tenes que cambiar el max-height tambien*/
     /*max-height:300px; /*Para que no se haga mas grande al hacer responsive. Si queres que sea mas largo tenes que cambiar esta propiedad tambien, junto con el height*/
     transition: .3s;
@@ -306,7 +306,7 @@ nav.fixed {
 .bannerNosotros{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(5,7,8, 0.75), rgba(5,7,8, 0.75)), url("img/fondo3.jpg");
+    background: linear-gradient(rgba(38, 35, 53, 0.75), rgba(38, 35, 53, 0.75)), url("img/fondo3.jpg");
     /*Parallax*/
     background-attachment: fixed;
     background-position:center;
@@ -379,7 +379,7 @@ iframe{
 .bannerContacto{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(5,7,8, 0.75), rgba(5,7,8, 0.75)), url("img/fondo5.jpg");
+    background: linear-gradient(rgba(38, 35, 53, 0.75), rgba(38, 35, 53, 0.75)), url("img/fondo5.jpg");
     /*Parallax*/
     background-attachment: fixed;
     background-position:center;
@@ -387,16 +387,16 @@ iframe{
 }
 
 input.transparent-input{
-	background-color:rgba(0,0,0,0) !important;
+	background-color:rgba(38, 35, 53, 0) !important;
 	border:none !important;
-	border-bottom:1px solid #fff !important;
-	border-left:1px solid #fff	!important;
-	color:#fff !important;
+	border-bottom:1px solid #DDDAE8 !important;
+	border-left:1px solid #DDDAE8	!important;
+	color: #DDDAE8 !important;
 
  }
 
 .formulario_contacto{
-    box-shadow: 10px 15px 20px -10px #000;
+    box-shadow: 10px 15px 20px -10px #262335;
     width:70%;
 }
 
@@ -422,21 +422,21 @@ footer{
     
     left:0px;
     bottom:0px;
-    background: #1b2a4e;
+    background: #262335;
     min-height:200px;
     background-position:center;
     
 }
 
 footer p{
-    color:#f3f3f3;
+    color:#DDDAE8;
     text-align:center;
 }
 
 #iconos{
     font-size:26px;
     padding: 0 8px;
-    color:#f3f3f3;
+    color:#DDDAE8;
 }
 
 
@@ -515,7 +515,7 @@ footer p{
 
     .etiqueta-horario{
         width: 430px;
-        border:2px solid #000;
+        border:2px solid #262335;
     } 
     
     .etiqueta-horario>.table{
