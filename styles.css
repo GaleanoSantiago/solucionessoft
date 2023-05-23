@@ -38,6 +38,8 @@
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
+
+    --purple: #a64abf;
 }
 
 
@@ -49,7 +51,9 @@ body{
 	overflow-x:hidden;  /*Para ocultar el desplazamiento horizontal*/
 
 }
-
+.text-purple{
+    color:#6D59C0;
+}
 .bg-dark-blue{
     background:#6D59C0;
 }
@@ -126,7 +130,7 @@ a{
 
 #menu li > a{
     font-size:20px;
-    color: #DDDAE8;
+    color: #fff;
     margin-right:50px;
 	transition: all .4s;
 
@@ -166,7 +170,7 @@ nav.fixed {
   }
 
 .active-item{           /*Para utilizar en js*/
-    color:var(--bs-primary) !important;
+    color:#6D59C0 !important;
     transform: translateX(5px) scale(1) !important;
 }
 
