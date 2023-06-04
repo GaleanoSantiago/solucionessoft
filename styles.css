@@ -1,4 +1,3 @@
-                            /*--- Estilos creados por Galeano Santiago ---*/
 /*---------------------------- Aspectos Generales ----------------------------*/
 
 *{
@@ -39,18 +38,22 @@
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
+
+    --purple: #a64abf;
 }
 
 
 body{
     font-family: sans-serif;
-    color: #fff;
+    color: #ffff;
     /* background-color:#000; */
     /*padding-bottom:1000em;*/
 	overflow-x:hidden;  /*Para ocultar el desplazamiento horizontal*/
 
 }
-
+.text-purple{
+    color:#6D59C0;
+}
 .bg-dark-blue{
     background:#000080;
 }
@@ -80,6 +83,36 @@ a{
     text-align: justify;
 }
 
+.text-azul{
+    color:#007BFF;
+}
+.text-rojo{
+    color: #DC3545;
+}
+
+.contenedor {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.centrar-flex{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.contenedor-fluido {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    /* padding-right: 15px;
+    padding-left: 15px; */
+  }
+.fila{
+    display: flex;
+    flex-wrap: wrap;
+}
 /*-------------------------------- Barra de Navegacion ---------------------------*/
 
 #menu{
@@ -97,7 +130,7 @@ a{
 
 #menu li > a{
     font-size:20px;
-    color: #ffff;
+    color: #fff;
     margin-right:50px;
 	transition: all .4s;
 
@@ -137,7 +170,7 @@ nav.fixed {
   }
 
 .active-item{           /*Para utilizar en js*/
-    color:var(--bs-primary) !important;
+    color:#6D59C0 !important;
     transform: translateX(5px) scale(1) !important;
 }
 
@@ -149,7 +182,7 @@ nav.fixed {
 .banner{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(5,7,8, 0.75), rgba(5,7,8, 0.75)), url("img/fondo1.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(38,35,53, 0.70)), url("img/fondo1.jpg");
     /*Parallax*/
     background-attachment: fixed;
     background-size: 100%;
@@ -167,6 +200,9 @@ nav.fixed {
     /* justify-self: center; */
     
 
+}
+.banner-description>.contenedor{
+    text-align:center;
 }
 
 .banner-description a{
@@ -224,6 +260,7 @@ nav.fixed {
 }
 
 
+/*----------------------------Pagina de Servicios-------------------------*/
 
 /*---------------contenido del inicio----------------*/
 
@@ -234,8 +271,20 @@ nav.fixed {
 
 .contenido_inicio-descripcion{
 	height:700px;
-}
 
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-right: -15px;
+    margin-left: -15px; */
+}
+.contenido_inicio-descripcion>.box-1{
+    display:flex;
+    align-items:center;
+    width:35%;
+}
+.contenido_inicio-descripcion>.box-2{
+    width:65%;
+}
 .contenido_inicio-descripcion>.col{
 	height:700px;
 }
@@ -249,10 +298,11 @@ nav.fixed {
     width: 295px;   /*Ancho, para cambiarlo debes cambiar el max-width tambien*/
     /*max-width:295px;    /*Ancho maximo, esto es para que no se haga mas grande de 350px*/
     border-radius:10px;
-    background:white;
-    height:300px;   /*Alto de la tarjeta, para cambiarlo tenes que cambiar el max-height tambien*/
+    background:#F9F1FF;
+    height:320px;   /*Alto de la tarjeta, para cambiarlo tenes que cambiar el max-height tambien*/
     /*max-height:300px; /*Para que no se haga mas grande al hacer responsive. Si queres que sea mas largo tenes que cambiar esta propiedad tambien, junto con el height*/
     transition: .3s;
+    border:1px solid var(--bs-gray-300);
     
 }
 
@@ -261,6 +311,9 @@ nav.fixed {
     border-top-right-radius:10px;
     width:100%;
 
+}
+.img-prod, .img-prod2{
+    border-bottom:1px solid var(--bs-gray-300);
 }
             /*-------Version alternariva del img-prod-------*/
 .img-prod2{
@@ -283,24 +336,44 @@ nav.fixed {
 
 .bloque-prod-contenido{
     height:166px;
+    text-align:start;
 }
 
+.bloque-prod-contenido p{
+    /* text-secondary ps-2 */
+    color:var(--bs-secondary);
+    padding-left:10px;
+}
     /*-----------Imagen de fondo--------------*/
 .contenido-inicio-hovers{
     background-image: url("img/fondo2.jpg");
     background-size: 120%;
     background-repeat: no-repeat;
     background-position:center;
+    color:#000;
+}
+.hovers-servicios{
+    display:flex;
+    align-items:center;
+    text-align:center;
+    height:700px;
 }
 
+.hovers-servicios>.box-1, .hovers-servicios>.box-2{
+    width:50%;
+}
 /*----------------------------Pagina de Nosotros-------------------------*/
 
 .section-nosotros{
 	height:700px;
 }
 
-.section-nosotros>.container>.row{
+.section-nosotros>.contenedor>.fila{
 	height:700px;
+    /* d-flex align-items-center justify-content-evenly  */
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .bannerNosotros{
@@ -327,21 +400,31 @@ nav.fixed {
 
 .etiqueta_sobreNosotros{
     box-shadow:1px 12px 15px -10px;
+    /* border rounded pe-3 ps-3 pt-4 pb-4 bg-light */
+    border:1px solid var(--bs-gray-300);
+    border-radius:10px;
+    padding: 20px 15px;
+    background:var(--bs-light);
+}
+.etiqueta_sobreNosotros h1{
+    font-weight:bold;
 }
 .etiqueta-horario{
     background-color: var(--bs-light);
+    /* border rounded pe-3 ps-3 pt-5 pb-5  */
+    padding: 40px 20px;
 }
 
 .etiqueta-horario>img{
     display:none;
 }
-/* .etiqueta_sobreNosotros > .col-3{
-    margin-top:10px;
-    border: black;
-    background-color: #000;
-} */
 
-
+.section-nosotros .fila .box-1{
+    width:30%;
+}
+.section-nosotros .fila .box-2{
+    width:45%;
+}
 
 .section-map{
 	height:700px;
@@ -349,13 +432,40 @@ nav.fixed {
 .section-map>.container-fluid>.row{
 	height:700px;
 }
+
 .section-map>.container-fluid>.row>.d-flex{
 	height:700px;
 }
 
-iframe{
-	height:450px;
+.section-map>.contenedor-fluido>.fila{
+    display:flex;
+    align-items:center;
+    justify-content: space-evenly;
+    height:700px;
+    position: relative;
 }
+
+.section-map .box-1{
+    width:50%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    padding:0 20px;
+}
+.section-map .box-2{
+    width:50%;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    height:100%;
+}
+.section-map .box-1 h1{
+    font-weight:bold;
+}
+/* iframe{
+	height:450px;
+} */
 
 
 /*--------------------------- Pagina de Contacto -----------------------------*/
@@ -425,12 +535,17 @@ footer{
     background: #1b2a4e;
     min-height:200px;
     background-position:center;
-    
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 footer p{
     color:#f3f3f3;
     text-align:center;
+    padding:0 20px; 
+    padding-top:20px;
 }
 
 #iconos{
@@ -450,6 +565,12 @@ footer p{
 /* Escritorio grande */
 @media only screen and (min-width: 992px) and (max-width: 1199px){
 
+/*----------------------------Pagina de Servicios-------------------------*/
+
+    .banner-description h1{
+        font-size: 7em;
+
+    }
 
 /*----------------------------Pagina de Servicios-------------------------*/
 
@@ -500,12 +621,21 @@ footer p{
         background-repeat: repeat;
     }
     .banner-description h1{
-        font-weight: 600;
-        font-size: 7em;
-    
+        font-size: 5em;    
     }
-
-
+/*----------------------------Pagina de Servicios-------------------------*/
+    .contenido_inicio-descripcion>.box-1{
+        width:50%;
+    }
+    .contenido_inicio-descripcion>.box-2{
+        width:50%;
+    }
+    .hovers-servicios>.box-1{
+        width:100%;
+    }
+    .hovers-servicios>.box-2{
+        width:100%;
+    }
 /*----------------------------Pagina de Nosotros-------------------------*/
 
     .primerFondoNosotros{
@@ -515,11 +645,11 @@ footer p{
 
     .etiqueta-horario{
         width: 430px;
-        border:2px solid #000;
     } 
     
     .etiqueta-horario>.table{
         width:200px !important;
+        /* width:100%; */
         display:none;
 
     }
@@ -527,6 +657,14 @@ footer p{
     .etiqueta-horario>img{
         display:block;
         width:400px;
+        /* width:100% !important; */
+    }
+
+    .section-nosotros .fila .box-1{
+        width:35%;
+    }
+    .section-nosotros .fila .box-2{
+        width:55%;
     }
 
 /*----------------------------Pagina de Contacto-------------------------*/
@@ -551,7 +689,7 @@ footer p{
 
     .banner-description h1{
         font-weight: 600;
-        font-size: 5.5em;
+        font-size: 4em;
     }
 
     
@@ -562,6 +700,7 @@ footer p{
         background-size: 130%;
         background-repeat: no-repeat;
         background-position:center;
+        height:700px !important;
     }
 
     .contenido_inicio{
@@ -575,19 +714,33 @@ footer p{
         /* border:2px solid red; */
 
     }
-    
+    .hovers-servicios>.box-1{
+        width:100%;
+    }
+    .hovers-servicios>.box-2{
+        width:100%;
+    }
+    .contenido_inicio-descripcion>.box-1{
+        width:100%;
+        height:450px;
+
+    }
+    .contenido_inicio-descripcion>.box-2{
+        width:100%;
+        height:450px;
+
+    }
     .contenido_inicio-descripcion>.col{
         height:450px;
         /* border:2px solid yellow; */
 
     }
     
-    .contenido-inicio-hovers>.row{
+    .contenido-inicio-hovers>.fila{
         height:700px;
-        /* border:2px solid green; */
 
     }
-
+    
 /*----------------------------Pagina de Nosotros-------------------------*/
 
     .primerFondoNosotros{
@@ -614,27 +767,39 @@ footer p{
         /* border:2px solid green; */
 
     }
-
-    iframe{
-        height:350px;
+    .section-nosotros .fila .box-1{
+        width:100%;
     }
+    .section-nosotros .fila .box-2{
+        width:100%;
+    }
+
+    .section-map .box-1, .section-map .box-2{
+        width:100%;
+        height:450px;
+    }
+
+    /* iframe{
+        height:350px;
+    } */
 
 /*----------------------------Pagina de Contacto-------------------------*/
 
     .section-contact{
-        height:1120px;
+        height:1300px;
+        /* padding:10px 0; */
     }
 
     .section-contact>.container-fluid>.row{
-        height:560px;
+        height:600px;
     }
 
     .section-contact>.container-fluid>.row>.col{
-        height:560px;
+        height:600px;
     }
 
     .section-contact>.container-fluid>.row>.col>.row>.col{
-        height:560px;
+        height:600px;
     }
 
 
@@ -647,7 +812,8 @@ footer p{
         height:100px;
     }
     form{
-        height:400px;
+        height:auto;
+        /* padding:30px 0; */
     }
 }
 
@@ -664,7 +830,6 @@ footer p{
     }
 
     .banner-description h1{
-        font-weight: 600;
         font-size: 4em;
     }
 
@@ -676,6 +841,8 @@ footer p{
         background-size: 130%;
         background-repeat: no-repeat;
         background-position:center;
+        height:700px !important;
+
     }
 
     .contenido_inicio{
@@ -689,19 +856,33 @@ footer p{
         /* border:2px solid red; */
 
     }
+    .contenido_inicio-descripcion>.box-1{
+        width:100%;
+        height:450px;
 
+    }
+    .contenido_inicio-descripcion>.box-2{
+        width:100%;
+        height:450px;
+
+    }
     .contenido_inicio-descripcion>.col{
         height:450px;
         /* border:2px solid yellow; */
 
     }
 
-    .contenido-inicio-hovers>.row{
+    .contenido-inicio-hovers>.fila{
         height:700px;
         /* border:2px solid green; */
 
     }
-
+    .hovers-servicios>.box-1{
+        width:100%;
+    }
+    .hovers-servicios>.box-2{
+        width:100%;
+    }
     /*----------------------------Pagina de Nosotros-------------------------*/
 
     .primerFondoNosotros{
@@ -724,6 +905,13 @@ footer p{
         width:100%;
     }
 
+    .section-nosotros .fila .box-1{
+        width:100%;
+    }
+    .section-nosotros .fila .box-2{
+        width:100%;
+    }
+
     /* seccion del mapa */
 
     .section-map{
@@ -740,26 +928,31 @@ footer p{
 
     }
 
-    iframe{
-        height:350px;
+    .section-map .box-1, .section-map .box-2{
+        width:100%;
+        height:450px;
     }
+
+    /* iframe{
+        height:350px;
+    } */
 
     /*----------------------------Pagina de Contacto-------------------------*/
 
     .section-contact{
-        height:1120px;
+        height:1300px;
     }
 
     .section-contact>.container-fluid>.row{
-        height:560px;
+        height:600px;
     }
 
     .section-contact>.container-fluid>.row>.col{
-        height:560px;
+        height:600px;
     }
 
     .section-contact>.container-fluid>.row>.col>.row>.col{
-        height:560px;
+        height:600px;
     }
 
 
@@ -772,7 +965,7 @@ footer p{
         height:100px;
     }
     form{
-        height:400px;
+        height:auto;
     }
 }
 
@@ -790,16 +983,15 @@ footer p{
     }
 
     .banner-description h1{
-        font-weight: 600;
-        font-size: 3.5em;
+        font-size: 3em;
     }
 
 
 /*----------------------------Seccion de Nosotros-------------------------*/
   
-    iframe{
+    /* iframe{
         width:100% !important;
-    }
+    } */
 /*----------------------------Seccion a Contacto-------------------------*/
 
     .formulario_contacto{
@@ -809,6 +1001,13 @@ footer p{
         /* width:120%; */
         margin:auto;
     }
+
+
+/*---------------------------- footer -------------------------*/
+    footer{
+        flex-direction:column;
+    }
+
 }
 
 /*Celulares angostos*/
@@ -818,12 +1017,13 @@ footer p{
         font-size:13px;
     }
 
-/*----------------------------General-------------------------*/
+/*----------------------------inicio-------------------------*/
     .banner-description a{
-        
-        padding: 0.6em 1em;
-        
+        padding: 0.6em 1em;       
         font-size: 13px;
+    }
+    .banner-description h1{
+        font-size: 2.5em;
     }
 }
 
@@ -841,10 +1041,6 @@ footer p{
         margin-top:25vh;
     }
 
-    .banner-description h1{
-        font-weight: 600;
-        font-size: 2.5em;
-    }
     .banner-description h3{
         font-size: 20px;
     }
