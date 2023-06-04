@@ -55,7 +55,7 @@ body{
     color:#6D59C0;
 }
 .bg-dark-blue{
-    background:#000080;
+    background:#6D59C0;
 }
 
 a{
@@ -123,7 +123,7 @@ a{
     left:0;
     justify-self: flex-start !important; */
     width:100%;
-    border-bottom:1px solid #fff;
+    border-bottom:1px solid #DDDAE8;
     box-shadow: 0 7px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
 	transition: all .5s;
 }
@@ -143,7 +143,7 @@ a{
 	transform: translateY(0) scale(1.10);
 	box-shadow:0 0 10px -10px;
 	transition: all .4s;
-    color: rgb(17, 0, 255);
+    color: rgb(109, 89, 192);
 }
 
 nav.fixed#menu {
@@ -158,7 +158,7 @@ nav.fixed {
     top: 0;
     width:100%;
     z-index: 3; /*Quitar mas tarde si hace falta*/
-    background:#000080;
+    background:#433E5A;
     border:none;
 
 }
@@ -206,11 +206,11 @@ nav.fixed {
 }
 
 .banner-description a{
-    border: 2px solid rgba(255,255,255,1);
+    border: 2px solid rgba(221, 218, 232, 1);
     padding: 0.6em 3.5em;
     margin:auto;
     opacity:0.8;
-    color:#fff;
+    color:#DDDAE8;
     text-decoration:none;
     border-radius: 50px;
     font-size: 0.9em;
@@ -218,9 +218,9 @@ nav.fixed {
 }
 
 .banner-description a:hover{
-    border: 2px solid rgb(17, 0, 255);
+    border: 2px solid rgb(67,62, 90);
     background: rgb(196, 196, 201);
-    color: #000 !important;
+    color: #262335 !important;
     transform: translateY(0) scale(1.10);
     transition: all .25s;
 }
@@ -379,7 +379,7 @@ nav.fixed {
 .bannerNosotros{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(5,7,8, 0.75), rgba(5,7,8, 0.75)), url("img/fondo3.jpg");
+    background: linear-gradient(rgba(38, 35, 53, 0.75), rgba(38, 35, 53, 0.75)), url("img/fondo3.jpg");
     /*Parallax*/
     background-attachment: fixed;
     background-position:center;
@@ -489,7 +489,7 @@ nav.fixed {
 .bannerContacto{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(5,7,8, 0.75), rgba(5,7,8, 0.75)), url("img/fondo5.jpg");
+    background: linear-gradient(rgba(38, 35, 53, 0.75), rgba(38, 35, 53, 0.75)), url("img/fondo5.jpg");
     /*Parallax*/
     background-attachment: fixed;
     background-position:center;
@@ -497,16 +497,16 @@ nav.fixed {
 }
 
 input.transparent-input{
-	background-color:rgba(0,0,0,0) !important;
+	background-color:rgba(38, 35, 53, 0) !important;
 	border:none !important;
-	border-bottom:1px solid #fff !important;
-	border-left:1px solid #fff	!important;
-	color:#fff !important;
+	border-bottom:1px solid #DDDAE8 !important;
+	border-left:1px solid #DDDAE8	!important;
+	color: #DDDAE8 !important;
 
  }
 
 .formulario_contacto{
-    box-shadow: 10px 15px 20px -10px #000;
+    box-shadow: 10px 15px 20px -10px #262335;
     width:70%;
 }
 
@@ -532,7 +532,7 @@ footer{
     
     left:0px;
     bottom:0px;
-    background: #1b2a4e;
+    background: #262335;
     min-height:200px;
     background-position:center;
     width:100%;
@@ -542,7 +542,7 @@ footer{
 }
 
 footer p{
-    color:#f3f3f3;
+    color:#DDDAE8;
     text-align:center;
     padding:0 20px; 
     padding-top:20px;
@@ -551,7 +551,7 @@ footer p{
 #iconos{
     font-size:26px;
     padding: 0 8px;
-    color:#f3f3f3;
+    color:#DDDAE8;
 }
 
 
