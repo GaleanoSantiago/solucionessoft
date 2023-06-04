@@ -253,7 +253,7 @@
                     <h1 class="text-purple">Contactenos</h1>
                     <div class="form-group mb-3">
                         <label for="nombre" class="form-label"></label>
-                        <input name="nombre" type="text" class="form-control " placeholder="Nombre">
+                        <input name="nombre" type="text" class="form-control " placeholder="Nombre" id="nombre">
                         <span></span>
                     </div>
                     <div class="form-group mb-3">
@@ -309,29 +309,6 @@
         <!--Inicializar animaciones-->
     <script>
         AOS.init();
-
-        function initMap() {
-        // Creamos un objeto geocoder para obtener las coordenadas de la dirección
-        var geocoder = new google.maps.Geocoder();
-        geocoder.geocode({ 'address': '-26.178939, -58.184488' }, function(results, status) {
-            if (status === 'OK') {
-            // Creamos un objeto mapa centrado en las coordenadas obtenidas
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 16,
-                center: results[0].geometry.location
-            });
-            // Agregamos un marcador en las coordenadas obtenidas
-            var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location
-            });
-            } else {
-            alert('No se pudo obtener la dirección: ' + status);
-            }
-        });
-        }
-        // Llamamos a la función initMap cuando se cargue la página
-        window.onload = initMap;
     </script>   
 <!-- Js propios -->
 <script src="js/script.js"></script>

@@ -22,37 +22,48 @@ const validarForm = (event)=>{
     inputs.forEach(input => {
         // span para mostrar error debajo de los inputs
         const spanError = input.nextElementSibling;
+
+        // Verifica que los inputs no esten vacios
         if (input.value.trim() === '') {
               spanError.classList.add('form-text',"text-danger");
               spanError.innerText = 'Este campo es obligatorio.';
               input.style.border = '1px solid red';
-            // console.log("Input vacio");
             hayErrores = true;
+
+        // Verifica que el input email tenga el valor correcto
           }else if(input.type === 'email' && !correoRegex.test(input.value)) {
             spanError.classList.add('form-text', 'text-danger');
             spanError.innerText = 'Ingrese un correo electrónico válido.';
             input.style.border = '1px solid red';
             hayErrores = true;
+
+        // Verifica que el input nombre no contenga numeros
+          }else if (input.id === 'nombre' && /\d/.test(input.value)) {
+            spanError.classList.add('form-text', 'text-danger');
+            spanError.innerText = 'No se permiten números en este campo.';
+            input.style.border = '1px solid red';
+            hayErrores = true;
+
+        // Si ninguna de las anteriores condiciones son verdaderas, significa que todo esta bien
           }else{
               spanError.classList.remove('form-text',"text-danger");
               spanError.innerText = '';
               input.style.border = ''; 
-            // console.log("input con algo");
           }
     });
     // span para mostrar error en el textarea
     const spanErrorTextarea = textarea.nextElementSibling;
+    
+    // Verifica que el textarea no este vacio
     if(textarea.value.trim() === ''){
-        // console.log("textarea vacio");
-            spanErrorTextarea.classList.add('form-text',"text-danger", "mb-1");
-            spanErrorTextarea.innerText = 'Este campo es obligatorio.';
-            textarea.style.border = '1px solid red'; 
+        spanErrorTextarea.classList.add('form-text',"text-danger", "mb-1");
+        spanErrorTextarea.innerText = 'Este campo es obligatorio.';
+        textarea.style.border = '1px solid red'; 
         hayErrores = true;
     }else{
-        // console.log("textarea con algo");
-            spanErrorTextarea.classList.remove('form-text',"text-danger", "mb-1");
-            spanErrorTextarea.innerText = '';
-            textarea.style.border = ''; 
+        spanErrorTextarea.classList.remove('form-text',"text-danger", "mb-1");
+        spanErrorTextarea.innerText = '';
+        textarea.style.border = ''; 
     }
     
     if(!hayErrores){
@@ -97,30 +108,47 @@ const activarItemsMenu = (tamanoDePantalla)=>{
     let posicionUs=nosotros.getBoundingClientRect().top;
     let posicionContact=contacto.getBoundingClientRect().top;
 
+    let secciones=[posicionInicio, posicionServices, posicionUs, posicionContact];
+    // console.log(secciones);
 
 
-    if(posicionInicio<(tamanoDePantalla/3) && posicionServices>(tamanoDePantalla/3.2)){
-        itemInicio.classList.add("active-item");
-    }else{
-        itemInicio.classList.remove("active-item");
+    // if(posicionInicio<(tamanoDePantalla/3) && posicionServices>(tamanoDePantalla/3.2)){
+    //     itemInicio.classList.add("active-item");
+    // }else{
+    //     itemInicio.classList.remove("active-item");
 
-    }
-    if(posicionServices<(tamanoDePantalla/3.2) && posicionUs>(tamanoDePantalla/5)){
-        itemServicios.classList.add("active-item");
-    }else{
-        itemServicios.classList.remove("active-item");
+    // }
+    // if(posicionServices<(tamanoDePantalla/3.2) && posicionUs>(tamanoDePantalla/5)){
+    //     itemServicios.classList.add("active-item");
+    // }else{
+    //     itemServicios.classList.remove("active-item");
         
+    // }
+    // if(posicionUs<(tamanoDePantalla/5) && posicionContact>(tamanoDePantalla/5)){
+    //     itemNosotros.classList.add("active-item");
+    // }else{
+    //     itemNosotros.classList.remove("active-item");
+    // }
+    // if(posicionContact<(tamanoDePantalla/5)){
+    //     itemContact.classList.add("active-item");
+    // }else{
+    //     itemContact.classList.remove("active-item");
+    // }
+
+    for(let i=0; i<secciones.length; i++){
+        if(secciones[i]<(tamanoDePantalla/4) && secciones[i+1]>(tamanoDePantalla/4)){
+            itemsMenu[i].classList.add("active-item");
+        }else{
+            itemsMenu[i].classList.remove("active-item");
+        }
+        if(secciones[secciones.length - 1]<(tamanoDePantalla/4)){
+            itemsMenu[itemsMenu.length - 1].classList.add("active-item");
+        }else{
+            itemsMenu[itemsMenu.length - 1].classList.remove("active-item");
+        }
+           
     }
-    if(posicionUs<(tamanoDePantalla/5) && posicionContact>(tamanoDePantalla/5)){
-        itemNosotros.classList.add("active-item");
-    }else{
-        itemNosotros.classList.remove("active-item");
-    }
-    if(posicionContact<(tamanoDePantalla/5)){
-        itemContact.classList.add("active-item");
-    }else{
-        itemContact.classList.remove("active-item");
-    }
+
 }
 
 async function handleSubmit() {
@@ -145,3 +173,29 @@ async function handleSubmit() {
         textarea.value="";
     }
 }
+
+// Api del mapa
+
+function initMap() {
+    // Creamos un objeto geocoder para obtener las coordenadas de la dirección
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ 'address': '-26.178939, -58.184488' }, function(results, status) {
+        if (status === 'OK') {
+        // Creamos un objeto mapa centrado en las coordenadas obtenidas
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: results[0].geometry.location
+        });
+        // Agregamos un marcador en las coordenadas obtenidas
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+        } else {
+        alert('No se pudo obtener la dirección: ' + status);
+        }
+    });
+    }
+    // Llamamos a la función initMap cuando se cargue la página
+    window.onload = initMap;
+    
